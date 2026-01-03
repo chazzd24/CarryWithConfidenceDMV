@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Carry with Confidence DMV</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <img src="Logo.png" alt="Carry with Confidence Logo" class="logo">
+                <span class="brand-text">Carry with Confidence DMV</span>
+            </div>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Contact Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <p>Get in touch to learn more about our courses or to register for training</p>
+        </div>
+    </section>
+
+    <!-- Contact Content -->
+    <section class="contact-content">
+        <div class="container">
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h2>Get In Touch</h2>
+                    <p>We're here to answer your questions and help you get started with professional firearms training. Whether you're interested in concealed carry certification, basic training, or one-on-one instruction, we're ready to assist.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <h3>Phone</h3>
+                            <p><a href="tel:202-684-5953">(202) 684-5953</a></p>
+                        </div>
+                        <div class="contact-item">
+                            <h3>Email</h3>
+                            <p><a href="mailto:info@carrywithconfidencedmv.com">info@carrywithconfidencedmv.com</a></p>
+                        </div>
+                        <div class="contact-item">
+                            <h3>Service Area</h3>
+                            <p>Maryland, Washington DC, and surrounding areas</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-wrapper">
+                    <h2>Send Us a Message</h2>
+                    <form id="contactForm" class="contact-form" action="https://formspree.io/f/mykzkrwg" method="POST">
+                        <div class="form-group">
+                            <label for="firstName">First Name *</label>
+                            <input type="text" id="firstName" name="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name *</label>
+                            <input type="text" id="lastName" name="lastName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="interest">Interest Area *</label>
+                            <select id="interest" name="interest" required>
+                                <option value="">Select an area of interest...</option>
+                                <option value="concealed-carry-fundamentals">Concealed Carry and Home Defense Fundamentals</option>
+                                <option value="maryland-wear-carry">Maryland Wear and Carry Permit</option>
+                                <option value="dc-concealed-carry">DC Concealed Carry Permit</option>
+                                <option value="maryland-hql">Maryland Handgun Qualification License (HQL)</option>
+                                <option value="2-state-bundle">2-State Bundle</option>
+                                <option value="3-state-bundle">3-State Bundle</option>
+                                <option value="renewal">Permit Renewal</option>
+                                <option value="one-on-one">One-on-One Range Instruction</option>
+                                <option value="nra-pistol">NRA Basic Pistol</option>
+                                <option value="nra-rifle">NRA Basic Rifle</option>
+                                <option value="ar15-fundamentals">AR-15 Fundamentals</option>
+                                <option value="mini-courses">Mini Courses</option>
+                                <option value="general-inquiry">General Inquiry</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message (Optional)</label>
+                            <textarea id="message" name="message" rows="5"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                        <div id="formStatus" class="form-status"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What do I need to bring to class?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>For most courses, you'll need to bring a valid ID, note-taking materials, and appropriate clothing for the range. Firearms and ammunition requirements vary by course. Specific details will be provided upon registration.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Do I need to own a firearm to take a course?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>No, you do not need to own a firearm for most courses. We can provide guidance on rental options or loaner firearms for range sessions. Please contact us in advance if you need assistance with equipment.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>How long does it take to receive my training certificate?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Training certificates are typically issued upon successful completion of the course, including both classroom and range requirements. You'll receive your certificate at the end of the course.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Can I take multiple courses in a bundle?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes! We offer 2-state and 3-state bundles that allow you to earn multiple certifications efficiently. These bundles are designed to eliminate redundant training while meeting all requirements for each jurisdiction.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What is your cancellation policy?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Please contact us directly to discuss cancellation and rescheduling policies. We understand that circumstances may change and will work with you to find a solution.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Are your courses suitable for beginners?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Absolutely! Many of our courses, including the USCCA Concealed Carry & Home Defense Fundamentals, NRA Basic Pistol, and Maryland HQL courses, are designed specifically for beginners with no prior experience.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Carry with Confidence DMV</h3>
+                    <p>Professional firearms training for responsible citizens</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="courses.html">Courses</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p>Phone: <a href="tel:202-684-5953">(202) 684-5953</a></p>
+                    <p>Email: <a href="mailto:info@carrywithconfidencedmv.com">info@carrywithconfidencedmv.com</a></p>
+                    <p>Serving Maryland, DC, and surrounding areas</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Carry with Confidence DMV. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
