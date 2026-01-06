@@ -6,7 +6,7 @@
 }
 
 :root {
-    --gold: #DAA520;
+    --gold: #D4AF37;
     --gold-dark: #B8860B;
     --gold-light: #F4D03F;
     --black: #000000;
@@ -137,8 +137,12 @@ body {
     font-size: 3.5rem;
     font-weight: bold;
     margin-bottom: 1rem;
-    color: var(--gold);
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(135deg, #F4D03F 0%, #D4AF37 50%, #B8860B 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3), 0 0 10px rgba(212, 175, 55, 0.4), 0 0 20px rgba(212, 175, 55, 0.2);
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
 }
 
 .hero-subtitle {
@@ -169,16 +173,25 @@ body {
 }
 
 .btn-primary {
-    background-color: var(--gold);
+    background: linear-gradient(135deg, #F4D03F 0%, #D4AF37 25%, #B8860B 50%, #D4AF37 75%, #F4D03F 100%);
     color: var(--black);
     border-color: var(--gold);
+    box-shadow: 0 3px 8px rgba(212, 175, 55, 0.5), 
+                inset 0 3px 6px rgba(255, 255, 255, 0.4), 
+                inset 0 -3px 6px rgba(184, 134, 11, 0.4),
+                0 0 10px rgba(212, 175, 55, 0.3);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    position: relative;
 }
 
 .btn-primary:hover {
-    background-color: var(--gold-dark);
-    border-color: var(--gold-dark);
+    background: linear-gradient(135deg, #F4D03F 0%, #D4AF37 20%, #B8860B 40%, #D4AF37 60%, #F4D03F 80%, #D4AF37 100%);
+    border-color: var(--gold);
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(212, 175, 55, 0.3);
+    box-shadow: 0 5px 12px rgba(212, 175, 55, 0.6), 
+                inset 0 3px 6px rgba(255, 255, 255, 0.5), 
+                inset 0 -3px 6px rgba(184, 134, 11, 0.5),
+                0 0 15px rgba(212, 175, 55, 0.4);
 }
 
 .btn-secondary {
@@ -308,7 +321,12 @@ body {
 .page-hero h1 {
     font-size: 3rem;
     margin-bottom: 1rem;
-    color: var(--gold);
+    background: linear-gradient(135deg, #F4D03F 0%, #D4AF37 50%, #B8860B 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3), 0 0 10px rgba(212, 175, 55, 0.4);
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
 }
 
 .page-hero p {
@@ -518,7 +536,12 @@ body {
 .course-header h2 {
     font-size: 1.8rem;
     margin-bottom: 1rem;
-    color: var(--gold);
+    background: linear-gradient(135deg, #F4D03F 0%, #D4AF37 50%, #B8860B 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2), 0 0 8px rgba(212, 175, 55, 0.3);
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
 }
 
 .course-meta {
@@ -550,7 +573,7 @@ body {
 .course-expand-btn {
     width: 100%;
     padding: 1rem;
-    background-color: var(--gold);
+    background: linear-gradient(135deg, #F4D03F 0%, #D4AF37 25%, #B8860B 50%, #D4AF37 75%, #F4D03F 100%);
     color: var(--black);
     border: none;
     border-radius: 5px;
@@ -560,14 +583,22 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    transition: all 0.3s ease, transform 0.2s ease;
     margin-bottom: 1rem;
+    box-shadow: 0 3px 8px rgba(212, 175, 55, 0.5), 
+                inset 0 3px 6px rgba(255, 255, 255, 0.4), 
+                inset 0 -3px 6px rgba(184, 134, 11, 0.4),
+                0 0 10px rgba(212, 175, 55, 0.3);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .course-expand-btn:hover {
-    background-color: var(--gold-dark);
+    background: linear-gradient(135deg, #F4D03F 0%, #D4AF37 20%, #B8860B 40%, #D4AF37 60%, #F4D03F 80%, #D4AF37 100%);
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(212, 175, 55, 0.3);
+    box-shadow: 0 5px 12px rgba(212, 175, 55, 0.6), 
+                inset 0 3px 6px rgba(255, 255, 255, 0.5), 
+                inset 0 -3px 6px rgba(184, 134, 11, 0.5),
+                0 0 15px rgba(212, 175, 55, 0.4);
 }
 
 .course-expand-btn:active {
@@ -634,6 +665,49 @@ body {
 .detail-section p {
     line-height: 1.8;
     color: var(--text-dark);
+}
+
+.mini-courses-list {
+    margin-top: 2rem;
+}
+
+.mini-courses-list h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: var(--black);
+    border-bottom: 2px solid var(--gold);
+    padding-bottom: 0.5rem;
+}
+
+.mini-course-items {
+    list-style: none;
+    padding-left: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 0.75rem;
+}
+
+.mini-course-items li {
+    padding: 0.75rem;
+    padding-left: 2rem;
+    position: relative;
+    color: var(--text-dark);
+    background-color: var(--light-gray);
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.mini-course-items li:hover {
+    background-color: #e8e8e8;
+}
+
+.mini-course-items li::before {
+    content: '✓';
+    position: absolute;
+    left: 0.75rem;
+    color: var(--gold);
+    font-weight: bold;
+    font-size: 1.1rem;
 }
 
 /* Contact Content */
