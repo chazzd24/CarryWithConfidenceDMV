@@ -725,6 +725,11 @@ body {
         inset 0 -1px 0 rgba(0, 0, 0, 0.5),
         0 0 20px rgba(212, 175, 55, 0.2);
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    -webkit-tap-highlight-color: rgba(212, 175, 55, 0.3);
+    touch-action: manipulation;
+    user-select: none;
+    -webkit-user-select: none;
+    z-index: 1;
 }
 
 .mini-course-button::before {
@@ -737,6 +742,8 @@ body {
     background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
     opacity: 0;
     transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: -1;
 }
 
 .mini-course-button::after {
@@ -749,9 +756,13 @@ body {
     font-size: 0.9rem;
     opacity: 0.7;
     transition: all 0.3s ease;
+    pointer-events: none;
+    z-index: -1;
 }
 
-.mini-course-button:hover {
+.mini-course-button:hover,
+.mini-course-button:active,
+.mini-course-button:focus {
     background: linear-gradient(135deg, #3a3a3a 0%, #2a2a2a 50%, #1a1a1a 100%);
     background-image: 
         repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(212, 175, 55, 0.05) 10px, rgba(212, 175, 55, 0.05) 20px),
@@ -766,6 +777,7 @@ body {
         0 0 30px rgba(212, 175, 55, 0.4),
         inset 0 0 20px rgba(212, 175, 55, 0.1);
     text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+    outline: none;
 }
 
 .mini-course-button:hover::before {
@@ -799,6 +811,19 @@ body {
     .mini-course-button {
         padding: 1.25rem;
         font-size: 1rem;
+        min-height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .mini-course-button:active {
+        transform: translateY(-1px) scale(0.98);
+        box-shadow: 
+            0 4px 8px rgba(0, 0, 0, 0.4),
+            inset 0 1px 0 rgba(255, 255, 255, 0.1),
+            inset 0 -1px 0 rgba(0, 0, 0, 0.5),
+            0 0 20px rgba(212, 175, 55, 0.3);
     }
 }
 
