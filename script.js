@@ -113,6 +113,31 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+    // Course Thumbnail Expand/Collapse Functionality
+    const courseThumbnailButtons = document.querySelectorAll('.course-thumbnail-expand-btn');
+    courseThumbnailButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.stopPropagation();
+            const courseThumbnail = this.closest('.course-thumbnail');
+            const expandableContent = courseThumbnail.querySelector('.course-thumbnail-details');
+            const expandText = this.querySelector('.expand-text');
+            const expandIcon = this.querySelector('.expand-icon');
+            const isActive = courseThumbnail.classList.contains('active');
+            
+            if (isActive) {
+                courseThumbnail.classList.remove('active');
+                expandableContent.style.maxHeight = '0';
+                expandText.textContent = 'Show Details';
+                expandIcon.textContent = '▼';
+            } else {
+                courseThumbnail.classList.add('active');
+                expandableContent.style.maxHeight = expandableContent.scrollHeight + 'px';
+                expandText.textContent = 'Hide Details';
+                expandIcon.textContent = '▲';
+            }
+        });
+    });
 });
 
 
