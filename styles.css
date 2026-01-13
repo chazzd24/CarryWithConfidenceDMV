@@ -744,7 +744,8 @@ body {
     max-height: 0;
     opacity: 0;
     overflow: hidden;
-    transition: max-height 0.4s ease, opacity 0.4s ease, margin-top 0.4s ease;
+    visibility: hidden;
+    transition: max-height 0.4s ease, opacity 0.4s ease, margin-top 0.4s ease, visibility 0.4s ease;
     margin-top: 0;
     padding: 0;
     font-size: 0.95rem;
@@ -756,6 +757,9 @@ body {
 }
 
 .mini-course-button.active .mini-course-description {
+    max-height: 2000px;
+    opacity: 1;
+    visibility: visible;
     margin-top: 1.25rem;
     padding-top: 1.25rem;
     border-top: 1px solid rgba(212, 175, 55, 0.3);
