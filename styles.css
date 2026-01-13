@@ -861,8 +861,26 @@ body {
         font-size: 1rem;
         min-height: 60px;
         display: flex;
+        flex-direction: column;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-start;
+    }
+    
+    .mini-course-description {
+        max-height: 0 !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        overflow: hidden !important;
+        margin-top: 0 !important;
+        padding: 0 !important;
+    }
+    
+    .mini-course-button.active .mini-course-description {
+        max-height: 2000px !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        margin-top: 1.25rem !important;
+        padding-top: 1.25rem !important;
     }
     
     .mini-course-button:active {
