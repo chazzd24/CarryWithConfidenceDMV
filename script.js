@@ -151,54 +151,67 @@ document.addEventListener('DOMContentLoaded', function() {
             description.style.visibility = 'hidden';
             description.style.marginTop = '0';
             description.style.padding = '0';
+            description.style.display = 'block';
         }
+        // Ensure button is clickable
+        button.style.cursor = 'pointer';
+        button.style.pointerEvents = 'auto';
     });
     
-    miniCourseButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const description = this.querySelector('.mini-course-description');
-            const isActive = this.classList.contains('active');
-            
-            // Close all other buttons
-            miniCourseButtons.forEach(btn => {
-                if (btn !== this) {
-                    btn.classList.remove('active');
-                    const otherDesc = btn.querySelector('.mini-course-description');
-                    if (otherDesc) {
-                        otherDesc.style.maxHeight = '0';
-                        otherDesc.style.opacity = '0';
-                        otherDesc.style.visibility = 'hidden';
-                        otherDesc.style.marginTop = '0';
-                        otherDesc.style.padding = '0';
-                    }
-                }
-            });
-            
-            // Toggle current button
-            if (isActive) {
-                this.classList.remove('active');
-                if (description) {
-                    description.style.maxHeight = '0';
-                    description.style.opacity = '0';
-                    description.style.visibility = 'hidden';
-                    description.style.marginTop = '0';
-                    description.style.padding = '0';
-                }
-            } else {
-                this.classList.add('active');
-                if (description) {
-                    description.style.maxHeight = description.scrollHeight + 'px';
-                    description.style.opacity = '1';
-                    description.style.visibility = 'visible';
-                    description.style.marginTop = '1.25rem';
-                    description.style.paddingTop = '1.25rem';
-                    // Scroll into view if needed
-                    setTimeout(() => {
-                        this.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-                    }, 100);
+    // Function to handle button click/touch
+    function handleMiniCourseClick(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        const button = e.currentTarget;
+        const description = button.querySelector('.mini-course-description');
+        const isActive = button.classList.contains('active');
+        
+        // Close all other buttons
+        miniCourseButtons.forEach(btn => {
+            if (btn !== button) {
+                btn.classList.remove('active');
+                const otherDesc = btn.querySelector('.mini-course-description');
+                if (otherDesc) {
+                    otherDesc.style.maxHeight = '0';
+                    otherDesc.style.opacity = '0';
+                    otherDesc.style.visibility = 'hidden';
+                    otherDesc.style.marginTop = '0';
+                    otherDesc.style.padding = '0';
                 }
             }
         });
+        
+        // Toggle current button
+        if (isActive) {
+            button.classList.remove('active');
+            if (description) {
+                description.style.maxHeight = '0';
+                description.style.opacity = '0';
+                description.style.visibility = 'hidden';
+                description.style.marginTop = '0';
+                description.style.padding = '0';
+            }
+        } else {
+            button.classList.add('active');
+            if (description) {
+                description.style.maxHeight = description.scrollHeight + 'px';
+                description.style.opacity = '1';
+                description.style.visibility = 'visible';
+                description.style.marginTop = '1.25rem';
+                description.style.paddingTop = '1.25rem';
+                // Scroll into view if needed
+                setTimeout(() => {
+                    button.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }, 100);
+            }
+        }
+    }
+    
+    // Add event listeners for both click and touch events
+    miniCourseButtons.forEach(button => {
+        button.addEventListener('click', handleMiniCourseClick);
+        button.addEventListener('touchend', handleMiniCourseClick);
     });
 });
 

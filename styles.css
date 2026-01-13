@@ -876,40 +876,57 @@ body {
     }
     
     .mini-course-button {
-        padding: 1.25rem;
-        font-size: 1rem;
-        min-height: 60px;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: flex-start;
-        text-align: left;
-        cursor: pointer;
-        -webkit-tap-highlight-color: rgba(212, 175, 55, 0.4);
+        padding: 1.25rem !important;
+        font-size: 1rem !important;
+        min-height: 60px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        justify-content: flex-start !important;
+        text-align: left !important;
+        cursor: pointer !important;
+        -webkit-tap-highlight-color: rgba(212, 175, 55, 0.4) !important;
+        background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 50%, #000000 100%) !important;
+        background-image: 
+            repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(212, 175, 55, 0.03) 10px, rgba(212, 175, 55, 0.03) 20px),
+            repeating-linear-gradient(-45deg, transparent, transparent 10px, rgba(212, 175, 55, 0.03) 10px, rgba(212, 175, 55, 0.03) 20px),
+            linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 50%, #000000 100%) !important;
+        border: 2px solid var(--gold) !important;
+        border-radius: 10px !important;
+        color: var(--white) !important;
+        font-weight: 600 !important;
+        box-shadow: 
+            0 4px 8px rgba(0, 0, 0, 0.4),
+            inset 0 1px 0 rgba(255, 255, 255, 0.1),
+            inset 0 -1px 0 rgba(0, 0, 0, 0.5),
+            0 0 20px rgba(212, 175, 55, 0.2) !important;
+        position: relative !important;
+        overflow: hidden !important;
     }
     
     .mini-course-title {
-        width: 100%;
-        padding-right: 2rem;
-        font-weight: 600;
-        color: var(--white);
+        width: 100% !important;
+        padding-right: 2rem !important;
+        font-weight: 600 !important;
+        color: var(--white) !important;
+        display: block !important;
+        position: relative !important;
     }
     
     .mini-course-title::after {
-        content: '▼';
-        position: absolute;
-        right: 1.25rem;
-        top: 1.25rem;
-        transform: translateY(0);
-        color: var(--gold);
-        font-size: 1rem;
-        font-weight: bold;
-        transition: transform 0.3s ease;
+        content: '▼' !important;
+        position: absolute !important;
+        right: 0 !important;
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+        color: var(--gold) !important;
+        font-size: 1rem !important;
+        font-weight: bold !important;
+        transition: transform 0.3s ease !important;
     }
     
     .mini-course-button.active .mini-course-title::after {
-        content: '▲';
-        transform: translateY(0);
+        content: '▲' !important;
     }
     
     .mini-course-description {
@@ -932,16 +949,16 @@ body {
     }
     
     .mini-course-button:active {
-        transform: translateY(-1px) scale(0.98);
+        transform: translateY(-1px) scale(0.98) !important;
         box-shadow: 
             0 4px 8px rgba(0, 0, 0, 0.4),
             inset 0 1px 0 rgba(255, 255, 255, 0.1),
             inset 0 -1px 0 rgba(0, 0, 0, 0.5),
-            0 0 20px rgba(212, 175, 55, 0.3);
+            0 0 20px rgba(212, 175, 55, 0.3) !important;
     }
     
     .mini-course-button::after {
-        display: none;
+        display: none !important;
     }
 }
 
