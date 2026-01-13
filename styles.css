@@ -738,30 +738,49 @@ body {
 .mini-course-title {
     display: block;
     width: 100%;
+    position: relative;
+    padding-right: 2rem;
+}
+
+.mini-course-title::after {
+    content: '▼';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--gold);
+    font-size: 0.8rem;
+    transition: transform 0.3s ease;
+}
+
+.mini-course-button.active .mini-course-title::after {
+    content: '▲';
+    transform: translateY(-50%) rotate(0deg);
 }
 
 .mini-course-description {
-    max-height: 0;
-    opacity: 0;
-    overflow: hidden;
-    visibility: hidden;
+    max-height: 0 !important;
+    opacity: 0 !important;
+    overflow: hidden !important;
+    visibility: hidden !important;
     transition: max-height 0.4s ease, opacity 0.4s ease, margin-top 0.4s ease, visibility 0.4s ease;
-    margin-top: 0;
-    padding: 0;
+    margin-top: 0 !important;
+    padding: 0 !important;
     font-size: 0.95rem;
     font-weight: 400;
     line-height: 1.6;
     text-align: left;
     color: rgba(255, 255, 255, 0.9);
     text-shadow: none;
+    display: block;
 }
 
 .mini-course-button.active .mini-course-description {
-    max-height: 2000px;
-    opacity: 1;
-    visibility: visible;
-    margin-top: 1.25rem;
-    padding-top: 1.25rem;
+    max-height: 2000px !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    margin-top: 1.25rem !important;
+    padding-top: 1.25rem !important;
     border-top: 1px solid rgba(212, 175, 55, 0.3);
 }
 
@@ -862,8 +881,35 @@ body {
         min-height: 60px;
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
         justify-content: flex-start;
+        text-align: left;
+        cursor: pointer;
+        -webkit-tap-highlight-color: rgba(212, 175, 55, 0.4);
+    }
+    
+    .mini-course-title {
+        width: 100%;
+        padding-right: 2rem;
+        font-weight: 600;
+        color: var(--white);
+    }
+    
+    .mini-course-title::after {
+        content: '▼';
+        position: absolute;
+        right: 1.25rem;
+        top: 1.25rem;
+        transform: translateY(0);
+        color: var(--gold);
+        font-size: 1rem;
+        font-weight: bold;
+        transition: transform 0.3s ease;
+    }
+    
+    .mini-course-button.active .mini-course-title::after {
+        content: '▲';
+        transform: translateY(0);
     }
     
     .mini-course-description {
@@ -873,6 +919,7 @@ body {
         overflow: hidden !important;
         margin-top: 0 !important;
         padding: 0 !important;
+        display: block !important;
     }
     
     .mini-course-button.active .mini-course-description {
@@ -881,6 +928,7 @@ body {
         visibility: visible !important;
         margin-top: 1.25rem !important;
         padding-top: 1.25rem !important;
+        display: block !important;
     }
     
     .mini-course-button:active {
@@ -890,6 +938,10 @@ body {
             inset 0 1px 0 rgba(255, 255, 255, 0.1),
             inset 0 -1px 0 rgba(0, 0, 0, 0.5),
             0 0 20px rgba(212, 175, 55, 0.3);
+    }
+    
+    .mini-course-button::after {
+        display: none;
     }
 }
 

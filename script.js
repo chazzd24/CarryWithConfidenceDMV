@@ -141,6 +141,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Mini Course Button Click Functionality
     const miniCourseButtons = document.querySelectorAll('.mini-course-button');
+    
+    // Ensure all descriptions are hidden on page load
+    miniCourseButtons.forEach(button => {
+        const description = button.querySelector('.mini-course-description');
+        if (description) {
+            description.style.maxHeight = '0';
+            description.style.opacity = '0';
+            description.style.visibility = 'hidden';
+            description.style.marginTop = '0';
+            description.style.padding = '0';
+        }
+    });
+    
     miniCourseButtons.forEach(button => {
         button.addEventListener('click', function() {
             const description = this.querySelector('.mini-course-description');
@@ -154,6 +167,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     if (otherDesc) {
                         otherDesc.style.maxHeight = '0';
                         otherDesc.style.opacity = '0';
+                        otherDesc.style.visibility = 'hidden';
+                        otherDesc.style.marginTop = '0';
+                        otherDesc.style.padding = '0';
                     }
                 }
             });
@@ -164,12 +180,18 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (description) {
                     description.style.maxHeight = '0';
                     description.style.opacity = '0';
+                    description.style.visibility = 'hidden';
+                    description.style.marginTop = '0';
+                    description.style.padding = '0';
                 }
             } else {
                 this.classList.add('active');
                 if (description) {
                     description.style.maxHeight = description.scrollHeight + 'px';
                     description.style.opacity = '1';
+                    description.style.visibility = 'visible';
+                    description.style.marginTop = '1.25rem';
+                    description.style.paddingTop = '1.25rem';
                     // Scroll into view if needed
                     setTimeout(() => {
                         this.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
