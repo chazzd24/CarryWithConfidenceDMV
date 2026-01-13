@@ -138,6 +138,46 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+    // Mini Course Button Click Functionality
+    const miniCourseButtons = document.querySelectorAll('.mini-course-button');
+    miniCourseButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const description = this.querySelector('.mini-course-description');
+            const isActive = this.classList.contains('active');
+            
+            // Close all other buttons
+            miniCourseButtons.forEach(btn => {
+                if (btn !== this) {
+                    btn.classList.remove('active');
+                    const otherDesc = btn.querySelector('.mini-course-description');
+                    if (otherDesc) {
+                        otherDesc.style.maxHeight = '0';
+                        otherDesc.style.opacity = '0';
+                    }
+                }
+            });
+            
+            // Toggle current button
+            if (isActive) {
+                this.classList.remove('active');
+                if (description) {
+                    description.style.maxHeight = '0';
+                    description.style.opacity = '0';
+                }
+            } else {
+                this.classList.add('active');
+                if (description) {
+                    description.style.maxHeight = description.scrollHeight + 'px';
+                    description.style.opacity = '1';
+                    // Scroll into view if needed
+                    setTimeout(() => {
+                        this.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    }, 100);
+                }
+            }
+        });
+    });
 });
 
 
